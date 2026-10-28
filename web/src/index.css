@@ -1,0 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root { --mana-top-inset: 0px; --mana-bottom-inset: 24px; --mana-app-height: 100dvh; }
+html, body, #root { margin: 0; min-height: 100%; }
+body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; }

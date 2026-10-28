@@ -1,0 +1,30 @@
+# Render Blueprint for the Benny API (New > Blueprint, pick this repo).
+# A persistent disk needs a paid instance; the SQLite database lives on it.
+services:
+  - type: web
+    name: benny-api
+    runtime: docker
+    rootDir: api
+    plan: starter
+    healthCheckPath: /healthz
+    disk:
+      name: benny-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: DATA_DIR
+        value: /data
+      - key: FIREBASE_PROJECT_ID
+        sync: false
+      - key: ALLOWED_ORIGINS
+        sync: false
+      - key: TOKEN_ENCRYPTION_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: PLAID_CLIENT_ID
+        sync: false
+      - key: PLAID_SECRET_SANDBOX
+        sync: false
+      - key: PLAID_SECRET_PRODUCTION
+        sync: false
